@@ -1,25 +1,21 @@
-# ReportsGenerator
+<p align="left">
+  <img src="https://www.vectorlogo.zone/logos/elixir-lang/elixir-lang-icon.svg" />
+</p>
 
-**TODO: Add description**
+# Reports Generator
 
-```
-:timer.tc(fn -> ReportsGenerator.build("report_complete.csv") end)
-:timer.tc(fn -> ReportsGenerator.build_from_many(["report_1.csv", "report_2.csv", "report_3.csv"]) end)
-```
+Elixir algorithm exercise that processes large CSV files with Elixir Streams and generates reports based on the data.
 
-## Installation
+## Measuring runtime:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `reports_generator` to your list of dependencies in `mix.exs`:
+**Normal version:**
 
 ```elixir
-def deps do
-  [
-    {:reports_generator, "~> 0.1.0"}
-  ]
-end
+:timer.tc(fn -> ReportsGenerator.build("report_complete.csv") end)
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/reports_generator](https://hexdocs.pm/reports_generator).
+**Parallel version:**
+
+```elixir
+:timer.tc(fn -> ReportsGenerator.build_from_many(["report_1.csv", "report_2.csv", "report_3.csv"]) end)
+```
